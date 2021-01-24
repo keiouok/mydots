@@ -1,10 +1,24 @@
 #!/bin/bash
 
+# link inside
+echo "******************"
+echo "make dotfiles link inside"
+echo "******************"
+IN_DOT_FILES=(.vimrc .gitconfig .tmux.conf .vim) 
+for file in ${IN_DOT_FILES[@]}
+do
+    if [ ! -e $file ]; then
+        ln -s ../$file $file
+    elif [ -e $file ]; then
+        echo $file' exists.'
+    fi
+done
+
 # link
 echo "******************"
 echo "make dotfiles link"
 echo "******************"
-DOT_FILES=(.bashrc .gvimrc .vimrc .gitconfig .tmux.conf .vim) 
+DOT_FILES=(.bashrc .gvimrc) 
 
 for file in ${DOT_FILES[@]}
 do
