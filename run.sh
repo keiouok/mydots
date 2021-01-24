@@ -1,15 +1,38 @@
 #!/bin/bash
 
 # link
+echo "******************"
+echo "make dotfiles link"
+echo "******************"
 DOT_FILES=(.bashrc .bash_profile .vimrc .cshrc .emacs .gitconfig .tmux.conf .vim .zshrc) 
 
 for file in ${DOT_FILES[@]}
 do
-    ln -s $HOME/mydots/$file $HOME/$file
+    # [FIXED] .vim/.vim... recursive problem was fixed
+    if [ ! -e $HOME/$file ]; then
+        ln -s $HOME/mydots/$file $HOME/$file
+    elif [ -e $HOME/$file ]; then
+        echo $file' exists.'
+    fi
 done
 
 # dein (no link)
 # [ref] https://qiita.com/Coolucky/items/0a96910f13586d635dc0
-mkdir -p ~/.cache/dein
-curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > dein-installer.sh
-bash dein-installer.sh ~/.cache/dein
+echo "******************"
+echo "dein install start."
+echo "******************"
+if [ ! -e  ~/.cache/dein ]; then
+    mkdir -p ~/.cache/dein
+    curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > dein-installer.sh
+    bash dein-installer.sh ~/.cache/dein
+else
+    echo "dein exists."
+fi
+
+echo "******************"
+echo "erase dein-installer"
+echo "******************"
+if [ -e dein-installer.sh ]; then
+    rm -rf dein-installer.sh
+fi
+
