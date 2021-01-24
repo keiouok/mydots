@@ -1,18 +1,1 @@
-# This is Git's per-user configuration file.
-[user]
-# Please adapt and uncomment the following lines:
-#	name = root
-#	email = root@LAPTOP-TJ0D7L1P.localdomain
-[user]
-	name = keiouok
-	email = ko.yuka.kp2@is.naist.jp
-[alias]
-  b = branch
-  c = checkout
-  d = diff
-  l = log
-  co = commit
-  ad = add
-  s = status
-[core]
-  editor = vim
+../.gitconfig
