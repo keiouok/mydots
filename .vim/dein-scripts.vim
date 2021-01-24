@@ -1,4 +1,4 @@
-let s:dein_dir = expand('/home/is/yuka-ko/.cache/dein')
+let s:dein_dir = expand('~/.cache/dein')
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 if &runtimepath !~# '/dein.vim'
   if !isdirectory(s:dein_repo_dir)
@@ -11,9 +11,10 @@ if &compatible
 endif
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
-  let s:toml_dir = expand('/home/is/yuka-ko/.vim/toml')
+  let s:toml_dir = expand('~/.vim/toml')
   call dein#load_toml(s:toml_dir . '/dein.toml', {'lazy': 0})
-  call dein#add('Shougo/deoplete.nvim')
+  "call dein#load_toml(s:toml_dir . '/dein_lazy.toml', {'lazy': 1})
+  "call dein#add('Shougo/deoplete.nvim')
   call dein#end()
   call dein#save_state()
 endif
@@ -25,3 +26,4 @@ if len(s:removed_plugins) > 0
   call map(s:removed_plugins, "delete(v:val, 'rf')")
   call dein#recache_runtimepath()
 endif
+

@@ -1,6 +1,21 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
+# deoplete
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+hook_add = '''
+   let g:deoplete#enable_at_startup = 1
+   let g:deoplete#enable_ignore_case = 1
+   let g:deoplete#enable_smart_case = 1
+'''
+# deoplete on vim requires plugin 1/2
+[[plugins]]
+repo = 'roxma/nvim-yarp'
+
+# deoplete on vim requires plugin 2/2
+[[plugins]]
+repo = 'roxma/vim-hug-neovim-rpc'
 [[plugins]]
 repo = 'cespare/vim-toml'
 
@@ -129,10 +144,4 @@ repo = 'vim-airline/vim-airline-themes'
 #[[plugins]]
 #repo = 'ryanoasis/nerd-fonts'
 #
-#[[plugins]]
-#repo = 'Shougo/deoplete.nvim'
-#hook_add = '''
-#let g:deoplete#enable_at_startup = 1
-#let g:deoplete#enable_ignore_case = 1
-#let g:deoplete#enable_smart_case = 1 
-#'''
+
