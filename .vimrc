@@ -247,3 +247,16 @@ set ttimeoutlen=50
 ""endif
 ""
 "End dein Scripts-------------------------
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/deoplete.nvim
+set runtimepath+=~/.cache/dein/repos/github.com/roxma/nvim-yarp
+set runtimepath+=~/.cache/dein/repos/github.com/roxma/vim-hug-neovim-rpc
+
+let g:deoplete#enable_at_startup = 1
+call deoplete#custom#option('deoplete-options-yarp', v:true)
+
+set nocompatible
+syntax enable
+filetype plugin indent on
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/deoplete.nvim/
+let g:deoplete#enable_at_startup = 1
+

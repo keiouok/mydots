@@ -1,147 +1,83 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
-# deoplete
 [[plugins]]
-repo = 'Shougo/deoplete.nvim'
+repo = 'Shougo/vimproc.vim'
+build = 'make'
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+on_path = '.*'
+
+[[plugins]]
+repo = 'Shougo/vimfiler'
+
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+depends = 'Shougo/neomru'
 hook_add = '''
-   let g:deoplete#enable_at_startup = 1
-   let g:deoplete#enable_ignore_case = 1
-   let g:deoplete#enable_smart_case = 1
+  nnoremap ,df :<C-u>DeniteBufferDir -buffer-name=files file<CR>
+  nnoremap ,db :<C-u>Denite buffer -buffer-name=files file<CR>
+  nnoremap ,dr :<C-u>Denite -buffer-name=register register<CR>
+  nnoremap ,dm :<C-u>Denite file_mru<CR>
+  nnoremap ,g  :<C-u>Denite grep<CR>
+autocmd FileType denite call s:denite_my_settings()
+function! s:denite_my_settings() abort
+  nnoremap <silent><buffer><expr> <CR>
+  \ denite#do_map('do_action')
+  nnoremap <silent><buffer><expr> d
+  \ denite#do_map('do_action', 'delete')
+  nnoremap <silent><buffer><expr> p
+  \ denite#do_map('do_action', 'preview')
+  nnoremap <silent><buffer><expr> q
+  \ denite#do_map('quit')
+  nnoremap <silent><buffer><expr> i
+  \ denite#do_map('open_filter_buffer')
+  nnoremap <silent><buffer><expr> <Space>
+  \ denite#do_map('toggle_select').'j'
+endfunction  
 '''
-# deoplete on vim requires plugin 1/2
-[[plugins]]
-repo = 'roxma/nvim-yarp'
-
-# deoplete on vim requires plugin 2/2
-[[plugins]]
-repo = 'roxma/vim-hug-neovim-rpc'
-[[plugins]]
-repo = 'cespare/vim-toml'
-
-[[plugins]]
-repo = 'scrooloose/nerdtree'
-
-[[plugins]]
-repo = 'jistr/vim-nerdtree-tabs'
-hook_add = '''
-map <silent><C-n> :NERDTreeTabsToggle<CR>
-let NERDTreeShowHidden = 1
-let g:nerdtree_tabs_open_on_console_startup=0
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+hook_post_source = '''
+call denite#custom#option('default', 'prompt', '>')
 '''
-[[plugins]] # カラースキーム
+
+[[plugins]]
 repo = 'cocopon/iceberg.vim'
-[[plugins]]
-repo = 'w0ng/vim-hybrid'
-[[plugins]]
-repo = 'whatyouhide/vim-gotham'
-[[plugins]]
-repo = 'altercation/vim-colors-solarized'
-
-[[plugins]] # 置換のプレビュー
-repo = 'markonm/traces.vim'
-[[plugins]] # 囲いの便利なやつ
-repo = 'tpope/vim-surround'
-# Created by haya14busa -----------------------
-[[plugins]] # 簡単に移動するやつ
-repo = 'easymotion/vim-easymotion'
 hook_add = '''
-let mapleader = "\<Space>"
-map <Leader> <Plug>(easymotion-prefix)
-let g:EasyMotion_do_mapping = 0
-nmap s <Plug>(easymotion-overwin-f2)
-let g:EasyMotion_smartcase = 1 
-nmap <Leader>w <Plug>(easymotion-overwin-w)
-nmap <Leader>j <Plug>(easymotion-j)
-nmap <Leader>k <Plug>(easymotion-k)
-'''
-[[plugins]] # 検索をリッチに
-repo = 'haya14busa/incsearch.vim'
-[[plugins]] # incsearch + easymotion
-repo = 'haya14busa/incsearch-easymotion.vim'
-hook_add = '''
-function! s:incsearch_config(...) abort
-  return incsearch#util#deepextend(deepcopy({
-  \   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
-  \   'keymap': {
-  \     "\<CR>": '<Over>(easymotion)'
-  \   },
-  \   'is_expr': 0
-  \ }), get(a:, 1, {}))
-endfunction
-noremap <silent><expr> /  incsearch#go(<SID>incsearch_config())
-noremap <silent><expr> ?  incsearch#go(<SID>incsearch_config({'command': '?'}))
-noremap <silent><expr> g/ incsearch#go(<SID>incsearch_config({'is_stay': 1}))
-'''
-# ---------------------------------------------
-[[plugins]] # tmuxと一緒のキーで画面移動
-repo = 'christoomey/vim-tmux-navigator'
-[[plugins]]
-repo = 'simeji/winresizer'
-hook_add = '''
-let g:winresizer_vert_resize = 1
-let g:winresizer_horiz_resize = 1
-let g:airline#extensions#tabline#buffer_idx_mode = 1
+  set termguicolors
+  color iceberg
+  syntax on
 '''
 
-# for getting git branch in airline 
 [[plugins]]
-repo = 'tpope/vim-fugitive'
+repo = 'Yggdroot/indentLine'
 
 [[plugins]]
-repo = 'airblade/vim-gitgutter'
-
-[[plugins]]
-repo = 'tpope/vim-commentary'
+repo ='dense-analysis/ale'
+on_i = 1
 
 [[plugins]]
 repo = 'vim-airline/vim-airline'
-depends = ['/vim-airline-themes']
-hook_add = '''
-let g:airline_theme = 'bubblegum'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'default'
-let g:airline#extensions#tabline#buffer_idx_format = {
-	\ '0': '0 ',
-	\ '1': '1 ',
-	\ '2': '2 ',
-	\ '3': '3 ',
-	\ '4': '4 ',
-	\ '5': '5 ',
-	\ '6': '6 ',
-	\ '7': '7 ',
-	\ '8': '8 ',
-	\ '9': '9 '
-	\}
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-'''
+depends = ['vim-airline/vim-airline-themes']
 
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
-#[[lugins]]
-#repo = '~/vim-pseudoclipboard'
-# [[plugins]] # codeを検索...? (保留)
-# repo = 'mileszs/ack.vim
 
-# 個人用
-#[[plugins]]
-#repo = 'guns/xterm-color-table.vim'
+[[plugins]]
+repo = 'vim-scripts/vim-auto-save'
+hook_add = '''
+  let g:auto_save = 1
+  let g:auto_save_in_insert_mode = 0
+  let g:auto_save_insert_mode = 0
+  let g:auto_save_silent = 1
+'''
 
-#[[plugins]]
-#repo = 'tpope/vim-fugitive'
-#
-#[[plugins]]
-#repo = 'airblade/vim-gitgutter'
-#hook_add = '''
-#let g:gitgutter_highlight_lines = 1
-#'''
-#
-#[[plugins]]
-#repo = 'ryanoasis/vim-devicons'
-#
-#[[plugins]]
-#repo = 'ryanoasis/nerd-fonts'
-#
-
+[[plugins]]
+repo = 'prettier/vim-prettier'
+build = 'yarn install'
+on_ft = ['javascript', 'typescript', 'vue', 'css', 'scss', 'json', 'markdown']
+hook_source = '''
+let g:prettier#autoformat = 0
+let g:prettier#quickfix_enabled = 0
+autocmd BufWritePre *.js,*.ts,*.vue,*.css,*.scss,*.json,*.md PrettierAsync
+'''
