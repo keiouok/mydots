@@ -11,6 +11,17 @@ The other dots are link of mydots/*
 ex) .vimrc .vim/ .tmux.conf.
 
 ## future works
+## [FIX] Ubuntu server
+vim8.2
+
+echo has("python3") = 0 (python3/dyn exists)
+
+lua install ... ?
+
+## [FIX] WSL
+one error by deprecation
+
+
 ## git
 [Done] git-completion
 
