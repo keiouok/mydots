@@ -18,7 +18,7 @@ done
 echo "******************"
 echo "make dotfiles link"
 echo "******************"
-DOT_FILES=(.bashrc .gvimrc) 
+DOT_FILES=(.bashrc) 
 
 for file in ${DOT_FILES[@]}
 do
