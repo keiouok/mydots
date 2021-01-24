@@ -174,7 +174,7 @@ export LD_LIBRARY_PATH="${KALDI_TOOL_DIR}"/lib:"${KALDI_TOOL_DIR}"/lib64:"${LD_L
 
 ###########
 
-# stty erase '^?'
+stty erase '^?'
 
 # add path for gcc
 source /project/nakamura-lab08/Work/bin-wu/share/tools/gcc/path.sh
