@@ -1,12 +1,28 @@
 # mydots
-# future works
+
+## mydots/
+.* is dots for Ubuntu Server. Please edit these dots basically.
+
+## mydots/WSL/
+.bashrc is original for WSL in Windows 10.
+
+The other dots are link of mydots/*
+
+ex) .vimrc .vim/ .tmux.conf.
+
+## future works
 ## git
-git-completion
+[Done] git-completion
+
 global
 
 ## vim
 completion
+
 clipboard
 
+
 # link
-link between base dots (for ubuntu server) <-> wsl, macox
+[Done] link between base dots (for ubuntu server) <-> WSL
+
+link between base dots (for ubuntu server) <-> MacOS
