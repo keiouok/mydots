@@ -36,3 +36,16 @@ if [ -e dein-installer.sh ]; then
     rm -rf dein-installer.sh
 fi
 
+echo "******************"
+echo "git-completion install starts."
+echo "******************"
+GIT_DOT_FILES=(git-completion.bash git-prompt.sh)
+for file in ${GIT_DOT_FILES[@]}; do
+    if [ ! -e ~/.$file ]; then
+        wget https://raw.githubusercontent.com/git/git/master/contrib/completion/$file -O ~/.$file
+        chmod a+x ~/.$file
+        # echo "source ~/.git-completion.bash" >> ~/.bashrc"
+        source ~/.bashrc
+        # ~/.bashrc内のPS1 変数を __git_ps1 を含むように変更する
+    fi
+done
