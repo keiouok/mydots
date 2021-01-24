@@ -103,4 +103,82 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 export PYTHONPATH="/mnt/c/Users/koyuk/Anaconda3/add:$PYTHONPATH"
 
+### default until here
+:
+: '$Id: bashrc,v 1.6 2003/06/20 01:15:29 yosiaki Exp $'
 
+case .$HOSTTYPE in .) HOSTTYPE=`/share/script/hosttype`;; esac
+case .$PARSED_ENV in .) eval `/share/lib/skel/env sh`;; esac
+case .$Machine in .) Machine=$HOSTTYPE;; esac
+case .$Machine in
+.decstation) Machine=mips;;
+.iris4d) Machine=irix;;
+esac
+
+case .$PS1 in
+.) ;;
+*)
+  PS1="\h $ "
+  notify=true
+  ignoreeof=true
+  HISTSIZE=1000
+  history_control=ignoredups
+  : Alias definition
+  alias a=alias
+  alias pd=pushd
+  alias pop=popd
+  alias help=apropos
+  alias vt100="set term = vt100"
+  alias rs='resize > /dev/null'
+  alias setlang='setenv LANG ja_JP.\!$; stty a\!$'
+  alias showlang='(stty -a > /dev/tty) 2>&1 |  grep term;echo -n "LANG = ";printenv LANG'
+  ;;
+esac
+
+# https://qiita.com/varmil/items/9b0aeafa85975474e9b6
+# ps1
+#export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;35m\]\u@\h\[\033[35m\]:\[\033[01;36m\]\w\[\033[00m\]\[\033[01;35m\]$(__git_ps1 "(%s)")\[\033[0m\]\$ '
+export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;36m\]\u@\h\[\033[36m\]:\[\033[01;36m\]\w\[\033[00m\]\[\033[01;36m\]$(__git_ps1 "(%s)")\[\033[0m\]\$ '
+
+# show git
+if type __git_ps1 > /dev/null 2>&1 ; then
+  PROMPT_COMMAND="__git_ps1 '\h:\W \u' '\\\$ '; $PROMPT_COMMAND"
+  GIT_PS1_SHOWDIRTYSTATE=1
+  GIT_PS1_SHOWSTASHSTATE=1
+  GIT_PS1_SHOWUNTRACKEDFILES=
+  GIT_PS1_SHOWUPSTREAM=1
+  GIT_PS1_SHOWCOLORHINTS=1
+fi
+
+export GIT_PS1_SHOWDIRTYSTATE=true GIT_PS1_SHOWSTASHSTATE=true
+
+# fake __git_ps1 when git-prompts.sh not installed
+if [ "$(type -t __git_ps1)" == "" ]; then
+  function __git_ps1() { :; }
+fi
+
+# export PATH="$HOME/.pyenv/bin:$PATH"
+# eval "$(pyenv virtualenv-init -)"
+# export PATH="/home/is/yuka-ko/.pyenv/bin:$PATH"
+# eval "$(pyenv init -)"
+# export PATH="/home/is/yuka-ko/.local/bin:$PATH"
+# export PYENV_ROOT="${HOME}/.pyenv"
+# export PATH=${PYENV_ROOT}/bin:$PATH
+# eval "$(pyenv init -)"
+
+## alias
+# ls
+alias ls='ls -F'
+alias sl='ls'
+alias l='ls'
+alias ss='ls'
+alias ll='ls -l'
+alias la='ls -la'
+
+# vim
+alias vi='vim'
+alias v='vim'
+
+# git
+source ~/.git-completion.bash
+source ~/.git-prompt.sh
