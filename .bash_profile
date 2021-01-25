@@ -35,3 +35,4 @@ export PATH="${KALDI_TOOL_DIR}"/PESQ/P862_annex_A_2005_CD/source:"${PATH:-}"
 export PATH="${KALDI_TOOL_DIR}"/kenlm/build/bin:"${PATH:-}"
 export LD_LIBRARY_PATH="${KALDI_TOOL_DIR}"/lib:"${KALDI_TOOL_DIR}"/lib64:"${LD_LIBRARY_PATH:-}"
 
+export TERM="xterm-256color"
