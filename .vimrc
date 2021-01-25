@@ -247,3 +247,4 @@ if dein#check_install()
 endif
 
 "End dein Scripts-------------------------
+let g:python3_host_prog = $HOME . '~/.pyenv/versions/3.6.5/bin/python3'
