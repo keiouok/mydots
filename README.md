@@ -11,6 +11,9 @@ The other dots are link of mydots/*
 ex) .vimrc .vim/ .tmux.conf.
 
 ## future works
+## purple customize
+violet, shades-of-purple.vim
+
 ## deoplete.nvim
 何もわからぬ
 
