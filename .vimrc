@@ -208,6 +208,13 @@ set encoding=utf-8
 set fileencodings=utf-8
 set ttimeoutlen=50
 
+if (has("termguicolors"))
+ set termguicolors
+endif
+syntax enable
+colorscheme shades_of_purple
+
+
 "以下はdeinの読み込みに必要なので消さないこと"
 " dein Scripts-----------------------------"
 " if &compatible
