@@ -99,15 +99,15 @@ repo = 'airblade/vim-gitgutter'
 [[plugins]]
 repo = 'tpope/vim-commentary'
 
-# [[plugins]]
-# repo = 'ryanoasis/nerd-fonts'
+[[plugins]]
+repo = 'ryanoasis/nerd-fonts'
  
-# [[plugins]]
-# repo = 'ryanoasis/vim-devicons'
-# hook_add = '''
-# let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-# let g:webdevicons_enable = 1
-# '''
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+hook_add = '''
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:webdevicons_enable = 1
+'''
 
 #let g:airline_theme = 'base16_ashes'
 #let g:airline_theme = 'base16_bright'
