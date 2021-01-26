@@ -153,6 +153,9 @@ alias db='cd /project/nakamura-lab09/Work/yuka-ko/data-ko/db/btec/ja-en/'
 alias vi='vim'
 alias v='vim'
 
+# kerberos
+alias ks='kinit; krenew -K 10 -b -a; klist'
+
 # git
 source ~/.git-completion.bash
 source ~/.git-prompt.sh
@@ -165,5 +168,25 @@ export PYTHONPATH="/project/nakamura-lab09/Work/yuka-ko/espnet:$PYTHONPATH"
 alias p='python'
 alias venv='source /project/nakamura-lab09/Work/yuka-ko/espnet/tools/venv/bin/activate'
 venv
+
 XDG_CONFIG_HOME=/home/is/yuka-ko/.config
+
+export PATH="${TOOL_DIR}"/sph2pipe_v2.5:"${PATH:-}"
+export PATH="${TOOL_DIR}"/sctk-2.4.10/bin:"${PATH:-}"
+export PATH="${TOOL_DIR}"/mwerSegmenter:"${PATH:-}"
+export PATH="${TOOL_DIR}"/moses/scripts/tokenizer:"${TOOL_DIR}"/moses/scripts/generic:"${TOOL_DIR}"/tools/moses/scripts/recaser/:"${TOOL_DIR}"/moses/scripts/training/"${PATH:-}"
+export PATH="${TOOL_DIR}"/nkf/nkf-2.1.4:"${PATH:-}"
+export PATH="${TOOL_DIR}"/PESQ/P862_annex_A_2005_CD/source:"${PATH:-}"
+export PATH="${TOOL_DIR}"/kenlm/build/bin:"${PATH:-}"
+export LD_LIBRARY_PATH="${TOOL_DIR}"/lib:"${TOOL_DIR}"/lib64:"${LD_LIBRARY_PATH:-}"
+export PATH="${KALDI_TOOL_DIR}"/sph2pipe_v2.5:"${PATH:-}"
+export PATH="${KALDI_TOOL_DIR}"/sctk-2.4.10/bin:"${PATH:-}"
+export PATH="${KALDI_TOOL_DIR}"/mwerSegmenter:"${PATH:-}"
+export PATH="${KALDI_TOOL_DIR}"/moses/scripts/tokenizer:"${KALDI_TOOL_DIR}"/moses/scripts/generic:"${KALDI_TOOL_DIR}"/tools/moses/scripts/recaser/:"${KALDI_TOOL_DIR}"/moses/scripts/training/"${PATH:-}"
+export PATH="${KALDI_TOOL_DIR}"/nkf/nkf-2.1.4:"${PATH:-}"
+export PATH="${KALDI_TOOL_DIR}"/PESQ/P862_annex_A_2005_CD/source:"${PATH:-}"
+export PATH="${KALDI_TOOL_DIR}"/kenlm/build/bin:"${PATH:-}"
+export LD_LIBRARY_PATH="${KALDI_TOOL_DIR}"/lib:"${KALDI_TOOL_DIR}"/lib64:"${LD_LIBRARY_PATH:-}"
+
 export TERM="xterm-256color"
+
