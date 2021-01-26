@@ -3,3 +3,5 @@
 .netrwhist
 *.swap
 *.py
+.bashrc
+.bash_profile
