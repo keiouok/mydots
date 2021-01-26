@@ -99,11 +99,15 @@ repo = 'airblade/vim-gitgutter'
 [[plugins]]
 repo = 'tpope/vim-commentary'
 
-[[plugins]]
-repo = 'ryanoasis/nerd-fonts'
-
-[[plugins]]
-repo = 'ryanoasis/vim-devicons'
+# [[plugins]]
+# repo = 'ryanoasis/nerd-fonts'
+ 
+# [[plugins]]
+# repo = 'ryanoasis/vim-devicons'
+# hook_add = '''
+# let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+# let g:webdevicons_enable = 1
+# '''
 
 #let g:airline_theme = 'base16_ashes'
 #let g:airline_theme = 'base16_bright'
@@ -119,30 +123,26 @@ repo = 'ryanoasis/vim-devicons'
 [[plugins]]
 repo = 'vim-airline/vim-airline'
 hook_add = '''
+let g:airline_powerline_fonts = 1
 let g:shades_of_purple_airline = 1
 let g:airline_theme='shades_of_purple'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_left_sep=''
+let g:airline#extensions#tabline#buffer_idx_format = {
+    \ '0': '0 ',
+    \ '1': '1 ',
+    \ '2': '2 ',
+    \ '3': '3 ',
+    \ '4': '4 ',
+    \ '5': '5 ',
+    \ '6': '6 ',
+    \ '7': '7 ',
+    \ '8': '8 ',
+    \ '9': '9 '
+    \}
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
 '''
-# depends = ['/vim-airline-themes']
-# hook_add = '''
-# let g:airline_left_sep='▶'
-# let g:airline_theme = 'violet'
-# let g:airline#extensions#tabline#enabled = 1
-# let g:airline#extensionbs#tabline#formatter = 'jsformatter'
-# let g:airline#extensions#tabline#buffer_idx_format = {
-# 	\ '0': '0 ',
-# 	\ '1': '1 ',
-# 	\ '2': '2 ',
-# 	\ '3': '3 ',
-# 	\ '4': '4 ',
-# 	\ '5': '5 ',
-# 	\ '6': '6 ',
-# 	\ '7': '7 ',
-# 	\ '8': '8 ',
-# 	\ '9': '9 '
-# 	\}
-# let g:airline#extensions#tabline#left_sep = ' '
-# let g:airline#extensions#tabline#left_alt_sep = '|'
-# '''
 
 # # [[plugins]]
 # # repo = 'reireias/vim-cheatsheet'
@@ -157,6 +157,11 @@ let g:shades_of_purple_airline = 1
 let g:airline_theme='shades_of_purple'
 '''
 
+[[plugins]]
+repo = 'ctrlpvim/ctrlp.vim'
+
+[[plugins]]
+repo = 'powerline/powerline'
 # [[plugins]]
 # repo = 'itchyny/lightline.vim'
 # hook_add = '''
@@ -188,11 +193,5 @@ let g:airline_theme='shades_of_purple'
 #hook_add = '''
 #let g:gitgutter_highlight_lines = 1
 #'''
-#
-#[[plugins]]
-#repo = 'ryanoasis/vim-devicons'
-#
-#[[plugins]]
-#repo = 'ryanoasis/nerd-fonts'
 #
 

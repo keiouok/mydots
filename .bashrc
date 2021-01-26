@@ -120,6 +120,9 @@ alias ll='ls -l'
 alias la='ls -la'
 
 # tmux a
+# color control
+alias tmux='tmux -2'
+
 alias ta='tmux a'
 alias nv='nvidia-smi'
 
@@ -162,3 +165,5 @@ export PYTHONPATH="/project/nakamura-lab09/Work/yuka-ko/espnet:$PYTHONPATH"
 alias p='python'
 alias venv='source /project/nakamura-lab09/Work/yuka-ko/espnet/tools/venv/bin/activate'
 venv
+XDG_CONFIG_HOME=/home/is/yuka-ko/.config
+export TERM="xterm-256color"
