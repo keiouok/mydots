@@ -1,0 +1,14 @@
+[user]
+    name = keiouok
+    email = ko.yuka.kp2@is.naist.jp
+[alias]
+    graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all
+    b = branch
+    c = checkout
+    d = diff
+    l = log
+    co = commit
+    ad = add
+    s = status
+[core]
+    editor = vim
