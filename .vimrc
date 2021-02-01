@@ -208,9 +208,9 @@ set encoding=utf-8
 set fileencodings=utf-8
 set ttimeoutlen=50
 
-if (has("termguicolors"))
- set termguicolors
-endif
+" if (has("termguicolors"))
+"  set termguicolors
+" endif
 syntax enable
 colorscheme shades_of_purple
 

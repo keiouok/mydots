@@ -18,17 +18,18 @@ done
 echo "******************"
 echo "make dotfiles link"
 echo "******************"
-DOT_FILES=(.bashrc) 
-
+DOT_FILES=$IN_DOT_FILES 
 for file in ${DOT_FILES[@]}
 do
     # [FIXED] .vim/.vim... recursive problem was fixed
     if [ ! -e $HOME/$file ]; then
-        ln -s $HOME/mydots/MacOS/$file $HOME/$file
+        ln -s ../$file $HOME/$file
     elif [ -e $HOME/$file ]; then
         echo $file' exists.'
     fi
 done
+
+cp -r ../.vim $HOME/
 
 # dein (no link)
 # [ref] https://qiita.com/Coolucky/items/0a96910f13586d635dc0
