@@ -179,6 +179,11 @@ alias la='ls -la'
 alias vi='vim'
 alias v='vim'
 
+<<<<<<< HEAD
+=======
+alias bfg='java -jar ~/package/bfg-1.12.8.jar'
+
+>>>>>>> fe0bf31dd2948da77984f23d6c1bd168b207b24a
 # git
 source ~/.git-completion.bash
 source ~/.git-prompt.sh
