@@ -12,3 +12,5 @@
     s = status
 [core]
     editor = vim
+[push]
+    default = current
