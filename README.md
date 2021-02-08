@@ -45,3 +45,6 @@ clipboard
 [Done] link between base dots (for ubuntu server) <-> WSL
 
 link between base dots (for ubuntu server) <-> MacOS
+
+## linux
+purple customize
