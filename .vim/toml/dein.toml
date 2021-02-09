@@ -147,8 +147,8 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 # # [[plugins]]
 # # repo = 'reireias/vim-cheatsheet'
 
-# [[plugins]]
-# repo = 'vim-airline/vim-airline-themes'
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
 
 [[plugins]]
 repo = 'Rigellute/shades-of-purple.vim'

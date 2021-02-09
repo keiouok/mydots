@@ -8,8 +8,9 @@
     d = diff
     l = log
     co = commit
-    ad = add
+    a = add
     s = status
+    p = push
 [core]
     editor = vim
 [push]
