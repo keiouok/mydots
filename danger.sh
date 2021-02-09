@@ -1,7 +1,7 @@
 # [WARNING] This program is very danger. 
 # Please set filename manially, this program is very danger.
 # You can delete the file historically.
-file='.bashrc'
+file='.bash_profile'
 echo 'Removing...'
 git filter-branch --force --index-filter \
   "git rm --cached --ignore-unmatch $file" \
