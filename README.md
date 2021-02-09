@@ -10,6 +10,20 @@ The other dots are link of mydots/*
 
 ex) .vimrc .vim/ .tmux.conf.
 
+## If you want to eliminate .bashrc or .bash_profile
+
+```
+# [WARNING] This program is very danger. 
+# Please set filename manially, this program is very danger.
+# You can delete the file historically.
+file='.bash_profile'
+echo 'Removing...'
+git filter-branch --force --index-filter \
+  "git rm --cached --ignore-unmatch $file" \
+  --prune-empty --tag-name-filter cat -- --all
+```
+
+
 ## future works
 ## purple customize
 violet, shades-of-purple.vim
@@ -48,3 +62,5 @@ link between base dots (for ubuntu server) <-> MacOS
 
 ## linux
 purple customize
+
+
