@@ -3,5 +3,8 @@
 .netrwhist
 *.swap
 *.py
+<<<<<<< HEAD
+=======
 .bashrc
 .bash_profile
+>>>>>>> fe0bf31dd2948da77984f23d6c1bd168b207b24a
