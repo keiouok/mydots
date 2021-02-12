@@ -101,19 +101,19 @@ fi
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-export PYTHONPATH="/mnt/c/Users/koyuk/Anaconda3/add:$PYTHONPATH"
+# export PYTHONPATH="/mnt/c/Users/koyuk/Anaconda3/add:$PYTHONPATH"
 
-### default until here
-:
-: '$Id: bashrc,v 1.6 2003/06/20 01:15:29 yosiaki Exp $'
+# ### default until here
+# :
+# : '$Id: bashrc,v 1.6 2003/06/20 01:15:29 yosiaki Exp $'
 
-case .$HOSTTYPE in .) HOSTTYPE=`/share/script/hosttype`;; esac
-case .$PARSED_ENV in .) eval `/share/lib/skel/env sh`;; esac
-case .$Machine in .) Machine=$HOSTTYPE;; esac
-case .$Machine in
-.decstation) Machine=mips;;
-.iris4d) Machine=irix;;
-esac
+# case .$HOSTTYPE in .) HOSTTYPE=`/share/script/hosttype`;; esac
+# case .$PARSED_ENV in .) eval `/share/lib/skel/env sh`;; esac
+# case .$Machine in .) Machine=$HOSTTYPE;; esac
+# case .$Machine in
+# .decstation) Machine=mips;;
+# .iris4d) Machine=irix;;
+# esac
 
 case .$PS1 in
 .) ;;
@@ -179,11 +179,6 @@ alias la='ls -la'
 alias vi='vim'
 alias v='vim'
 
-<<<<<<< HEAD
-=======
-alias bfg='java -jar ~/package/bfg-1.12.8.jar'
-
->>>>>>> fe0bf31dd2948da77984f23d6c1bd168b207b24a
 # git
 source ~/.git-completion.bash
 source ~/.git-prompt.sh
