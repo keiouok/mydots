@@ -5,7 +5,7 @@ echo "******************"
 echo "make dotfiles link"
 echo "******************"
 
-DOT_FILES=(.vimrc .cshrc .emacs .gitconfig .tmux.conf .vim .zshrc) 
+DOT_FILES=(.vimrc .cshrc .emacs .gitconfig .tmux.conf .vim .zshrc .bashrc_init) 
 
 for file in ${DOT_FILES[@]}
 do
