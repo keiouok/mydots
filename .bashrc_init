@@ -43,7 +43,7 @@ export CUDA_PATH=$CUDAROOT
 # kerberos authorization
 cd ~/
 pyenv local system
-USER=yuka-ko
+USER=
 if test ${TERM} != "ansi" ; then
   if which krenew > /dev/null 2>&1 ; then
     if ps uxww | grep krenew | grep -q yuka-ko ; then
