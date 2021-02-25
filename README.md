@@ -66,4 +66,6 @@ link between base dots (for ubuntu server) <-> MacOS
 ## linux
 purple customize
 
+## issue
+Mac doesn't work purple.
 
