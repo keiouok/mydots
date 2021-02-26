@@ -4,7 +4,7 @@
 .* is dots for Ubuntu Server. Please edit these dots basically.
 
 ## version
-vim >= 8.0 (for dein)
+vim >= 8.2 (for dein)
 
 ## mydots/WSL/
 .bashrc is original for WSL in Windows 10.
