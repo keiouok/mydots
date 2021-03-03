@@ -18,7 +18,7 @@ done
 echo "******************"
 echo "make dotfiles link"
 echo "******************"
-DOT_FILES=(.bashrc) 
+DOT_FILES=(.bashrc_init) 
 
 for file in ${DOT_FILES[@]}
 do
