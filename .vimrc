@@ -202,7 +202,7 @@ set backspace=indent,eol,start
 set whichwrap=b,s,<,>,[,]
 let g:sublimemonokai_term_italic = 1
 
-let NERDTreeWinSize=25
+let NERDTreeWinSize=20
 
 set encoding=utf-8
 set fileencodings=utf-8
