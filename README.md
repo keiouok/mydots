@@ -28,11 +28,6 @@ git filter-branch --force --index-filter \
 
 
 ## future works
-## purple customize
-violet, shades-of-purple.vim
-
-## deoplete.nvim
-何もわからぬ
 
 ## [FIX] Ubuntu server
 vim8.2
