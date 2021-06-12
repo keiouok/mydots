@@ -27,7 +27,14 @@ if [ ! -e  ~/.cache/dein ]; then
     curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > dein-installer.sh
     bash dein-installer.sh ~/.cache/dein
 else
-    echo "dein exists."
+    echo ~/.cache/dein "exists. erase and re-install ok? [y/other] "
+    read input
+    if [ $input = "y" ]; then
+        rm -rf ~/.cache/dein
+        mkdir -p ~/.cache/dein
+        curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > dein-installer.sh
+        bash dein-installer.sh ~/.cache/dein
+    fi
 fi
 
 echo "******************"
